@@ -1,0 +1,88 @@
+.header{
+    margin: 50px 0;
+    text-align: center;
+    font-family: 'Press Start 2P';
+    text-transform: none;
+    color: #fff;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #ccc, 3px 3px 0 #444, 4px 4px 0 #444, 5px 5px 0 #444, 6px 6px 0 #444, 5px 5px 15px #999;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.boton-input{
+    display: flex;
+    justify-content: center;
+}
+
+.form input{
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+.form input:focus{
+    outline: none;
+    border: 1px solid rgb(148, 148, 148);
+}
+.form button{
+    margin-left: 10px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: #ccc;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Press Start 2P';
+    background-color: #000;
+}
+.form input{
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Press Start 2P';
+}
+
+.form button:hover{
+    background: #05ffa1;
+}
+
+.controles{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+body{
+    background-image: url("/media/vaporwave_background.jpg") !important;
+    background-size: cover;
+
+}
+
+.boton_controles{
+    background-color: transparent!important;    
+}
+
+
+.lista li{
+    list-style: none;
+    margin: 10px 0;
+    font-family: 'Press Start 2P';
+    color: #fff;
+    text-align: center;
+}
+
+.spinner_cola {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
