@@ -45,10 +45,9 @@ class Cola extends React.Component {
 function Cola() {
     const [songs, setSongs] = React.useState("");
     const [loading, setLoading] = React.useState(true);
-    const [bander, setBander] = React.useState(false);
     const [error, setError] = React.useState(null);
     const [refresh, setRefresh] = React.useState(false);
-    const lista = [];
+    var lista = [];
     React.useEffect(() => {
         setLoading(true);
         fetch('http://52.39.127.106:3000/commands?command=queue')
@@ -56,8 +55,7 @@ function Cola() {
         .then(data => {
             console.log(data)
             if(data.resultado=="No hay nada en la lista de reproducción"){
-                setSongs([data.resultado]);
-                setBander(true);
+                
             }
             else{
                 setSongs(data.resultado);
@@ -68,26 +66,31 @@ function Cola() {
             setError(error);
             setLoading(false);
         });
-        if (bander ){
-
-        }else{
-            const lista =  songs.split("]");
-        }
     }, [refresh]);
-    
-    
+   
+    lista =  songs.split("]");
     if (loading) return <div className="spinner-border text-light spinner_cola" role="status" style={{width:'20px',height:'20px'}}>
     <span className="sr-only"></span>
   </div>;
-    if (bander) return <div className="lista"><ul><li>{songs}</li></ul></div>;
+
+    if (lista[0] ==""){
+        return(
+            <div className="lista">
+                <ul>
+                    <li>No hay nada en la cola</li>
+                </ul>
+            </div>
+        );
+    }
     if (error) return <p>Hubo un error</p>;
     return (
+        
         <div className="lista">
             <ul>{
             lista.map((song) =>{
                 return(
-                    <div>
-                        <li key={song}>{song}</li>
+                    <div key={song}>
+                        <li >{song}</li>
                         <br></br>
                     </div>
                 )
