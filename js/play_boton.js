@@ -44,7 +44,7 @@ class PlayButton extends React.Component {
   } */
 
 function PlayButton(){
-    const [like, setLike] = React.useState(false);
+    const [like, setLike] = React.useState(true);
     const handleSubmit = () => {
       if(like){
         setLike(false);
@@ -57,7 +57,8 @@ function PlayButton(){
       }
     }
 
-    if (like)
+
+    if (like==false)
     {
       return(
         <button className="boton_controles" onClick={handleSubmit}>
