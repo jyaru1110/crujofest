@@ -24,6 +24,7 @@ function NextButton(){
     const handleSubmit = () => {
         fetch('http://52.39.127.106:3000/commands?command=next').then(response => response.json()).then(data => {
             console.log("next");
+            window.location.reload();
         });
     }
     return(
